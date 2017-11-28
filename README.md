@@ -1,5 +1,5 @@
 # DDR-Crossover-Finder
-application that parses stepmania charts and finds crossovers
+application that reads stepcharts and returns useful information
 
 TODO:
 
