@@ -7,9 +7,9 @@ application that reads stepcharts and returns useful information
 [Basic Patterns in DDR](http://ddrcommunity.com/basic-patterns-that-you-need-to-know/)
 
 
-TODO:
+# TODO:
 
-find crossovers
+##find crossovers
 
 [What is crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
 
@@ -17,9 +17,10 @@ find crossovers
 
 ![example of crossover](/docs/Crossover_Example.png)
 ![example of crossover](/docs/ddrStepsReference.jpg)
-find brackets
 
-find jacks (double steps)
+## find brackets
+
+## find jacks (double steps)
 
 
 determine percentage facing right vs facing left
