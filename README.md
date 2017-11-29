@@ -10,10 +10,13 @@ application that reads stepcharts and returns useful information
 TODO:
 
 find crossovers
-[What is crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
-[How to do crossovers. (sequence of crossovers)](https://www.wikihow.com/Do-a-Crossover-in-Dance-Dance-Revolution-or-In-the-Groove)
-![example of crossover](/docs/Crossover_Example.png)
 
+[What is crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
+
+[How to do crossovers. (sequence of crossovers)](https://www.wikihow.com/Do-a-Crossover-in-Dance-Dance-Revolution-or-In-the-Groove)
+
+![example of crossover](/docs/Crossover_Example.png)
+![example of crossover](/docs/ddrStepsReference.jpg)
 find brackets
 
 find jacks (double steps)
