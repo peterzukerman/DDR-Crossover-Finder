@@ -9,7 +9,7 @@ application that reads stepcharts and returns useful information
 
 # TODO:
 
-##find crossovers
+## find crossovers
 
 [What is crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
 
