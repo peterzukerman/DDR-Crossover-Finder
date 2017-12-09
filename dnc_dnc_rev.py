@@ -1,9 +1,5 @@
 import os
-
-def check_step():
-	"""
-	checks left/up/right/down/leftright/updown
-	"""
+import patternFinder as pf
 
 def initialize_notes(file_directory):
 	"""
@@ -82,16 +78,11 @@ def choose_songs():
         return choose_songs()
 
 
-def detect_crossover():
-    """
-	TODO: detects crossover pattern throughout the file(.sm or .ssc). 
-    """
-    print "YES"
-
 
 def main():
-    file = choose_songs()
-    notes = initialize_notes(file)
+	file = choose_songs()
+	notes = initialize_notes(file)
+	pf.detect_crossover(notes)
 
 main()
 
