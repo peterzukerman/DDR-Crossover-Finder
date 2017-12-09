@@ -2,10 +2,8 @@ import glob
 import os
 import sys
 
-
 from pygame import mixer  # pip install pygame
 
-currentLineNumber = 0
 mixer.init()
 
 def check_step():
@@ -13,12 +11,11 @@ def check_step():
 	checks left/up/right/down/leftright/updown
 	"""
 
-
 def initialize_notes(file_directory):
 	"""
 	Initializing notes depending on song selected in 'file_directory'
-	input : file_directory - the directory of file to be used.
-	output : TODO:: returns 2 dimm array. First dimension for each 'measures' and second dimension for notes.
+	input : file_directory - the directory of fㅣile to be used.
+	output : returns 1 dimensional array. each containing four digits.
 	"""
 	notes = []
 	file_sm = open(str(file_directory), 'r')
@@ -100,7 +97,7 @@ def detect_crossover():
 
 def main():
     file = choose_songs()
-    initialize_notes(file)
+    notes = initialize_notes(file)
 
 main()
 
@@ -136,25 +133,5 @@ Properties of sm files.
 example crossovers
 	basically, if we just have the boolean variable deciding which foot it is, then for example if the left foot is already down and the next arrow is a left arrow, we know it's a crossover
 there are still a couple of ambiguous cases, but that makes it a ton easier
-
-1000
-0100
-0001
-0100
-
-1000
-0010
-0001
-0010
-
-0001
-0100
-1000
-0100
-
-0001
-0010
-1000
-0010
 
 """
