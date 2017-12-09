@@ -25,7 +25,7 @@ def initialize_notes(file_directory):
 	for line in file_sm:
 		notesByMeasures = []
 		measure = -1
-		if (int(line[0])):
+		if (line[0] = '0'):
 			print line[:4]
 		if "measure" in line:
 			measure += 1
