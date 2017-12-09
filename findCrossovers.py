@@ -1,33 +1,57 @@
-import sys
 import glob
 import os
-from pygame import mixer  # Load the required library
+import sys
+
+
+from pygame import mixer  # pip install pygame
 
 currentLineNumber = 0
-notesByMeasures = []
 mixer.init()
+
+def check_step():
+	"""
+	checks left/up/right/down/leftright/updown
+	"""
 
 
 def initialize_notes(file_directory):
-    file_sm = open(str(file_directory), 'r')
-    for line in file_sm:
-	print line
-        measure = -1
-        if "measure" in line:
-            # print line.split("measure ")[1][:2]
-            measure += 1
-            # if len(line) == 6:
+	"""
+	Initializing notes depending on song selected in 'file_directory'
+	input : file_directory - the directory of file to be used.
+	output : TODO:: returns 2 dimm array. First dimension for each 'measures' and second dimension for notes.
+	"""
+	notes = []
+	file_sm = open(str(file_directory), 'r')
+	for line in file_sm:
+		notesByMeasures = []
+		measure = -1
+		if (int(line[0])):
+			print line[:4]
+		if "measure" in line:
+			measure += 1
+			notesByMeasures.append("")
+			notesByMeasures[measure].append(line)
+            # if len(line) == 6
             # print line[:4]
 
+
 def create_list_songs():
-    avail_songs = os.walk("./Songs").next()[1]
-    print "\tlist of songs available"
-    for idx, songs in enumerate(avail_songs):
-        print '\t\t', idx, ' : ', songs
-    return avail_songs
+	"""
+	Creates list of songs refering to 'Songs' directory. 
+	output : list of songs available in 'Songs' directory
+	"""
+	avail_songs = os.walk("./Songs").next()[1]
+	print "\tlist of songs available"
+	for idx, songs in enumerate(avail_songs):
+		print '\t\t', idx, ' : ', songs
+	return avail_songs
 
 
 def check_yes_no():
+    """
+    checks if user input is yes('y') or no('n'). Calls function itself if invalid input entered.
+    output : boolean. True if 'y' False if 'n'
+    """
     input = raw_input()
     if input == 'y':
         return True
@@ -39,6 +63,10 @@ def check_yes_no():
 
 
 def choose_songs():
+    """
+    chooses song from list of songs created from function create_list_songs().
+    output : directory of chosen song.
+    """
     list_of_songs = create_list_songs()
     input = raw_input("\t Choose song to play :")
     while int(input) > len(list_of_songs) - 1:
@@ -59,15 +87,15 @@ def choose_songs():
 
 
 def detect_crossover():
+    """
+	TODO: detects crossover pattern throughout the file(.sm or .ssc). 
+    """
     print "YES"
 
 
 def main():
     file = choose_songs()
     initialize_notes(file)
-    # mixer.music.load('')
-    # mixer.music.play()
-
 
 main()
 
