@@ -23,17 +23,23 @@ def initialize_notes(file_directory):
 	notes = []
 	file_sm = open(str(file_directory), 'r')
 	for line in file_sm:
-		notesByMeasures = []
-		measure = -1
-		if (line[0] = '0'):
-			print line[:4]
-		if "measure" in line:
-			measure += 1
-			notesByMeasures.append("")
-			notesByMeasures[measure].append(line)
+		#notesByMeasures = []
+		try:
+			int(line[0])
+			int(line[1])
+			int(line[2])
+			int(line[3])
+			notes.append(line[:4])
+		except:
+			pass
+		# if "measure" in line:
+		# 	measure += 1
+		# 	notesByMeasures.append("")
+		# 	notesByMeasures[measure].append(line)
             # if len(line) == 6
             # print line[:4]
-
+	#print notes
+	return notes
 
 def create_list_songs():
 	"""
@@ -45,7 +51,6 @@ def create_list_songs():
 	for idx, songs in enumerate(avail_songs):
 		print '\t\t', idx, ' : ', songs
 	return avail_songs
-
 
 def check_yes_no():
     """
