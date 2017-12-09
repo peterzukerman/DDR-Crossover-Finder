@@ -1,10 +1,4 @@
-import glob
 import os
-import sys
-
-from pygame import mixer  # pip install pygame
-
-mixer.init()
 
 def check_step():
 	"""
