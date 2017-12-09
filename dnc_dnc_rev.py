@@ -8,8 +8,8 @@ def check_step():
 def initialize_notes(file_directory):
 	"""
 	Initializing notes depending on song selected in 'file_directory'
-	input : file_directory - the directory of fㅣile to be used.
-	output : returns 1 dimensional array. each containing four digits.
+	input: file_directory - the directory of file to be used.
+	output: returns array with each containing 4 digits.
 	"""
 	notes = []
 	file_sm = open(str(file_directory), 'r')
