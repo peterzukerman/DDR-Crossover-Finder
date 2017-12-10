@@ -17,21 +17,22 @@ def detect_crossover(notesByMeasures):
 			print("Crossover at line: ", x + 1)
 		if not foot and check_step(notesByMeasures[x + 1]) == 0:
 			print("Crossover at line: ", x + 1)
+	print "check crossover done"
 
 
 def check_step(line):
 	"""
 	checks left/up/right/down/leftright/updown
 	"""
-	if line.count(0) == 4:
+	if line.count("0") == 4:
 		return -1  # returns -1 if there are no notes on the line
 	for x in range(0, len(line)):
 		if line[x] == 0:  # if 0, keep going until there's a note
 			continue
 		# if 1 and only 1 note, return the pos of note
-		elif line[x] == 1 and line.count(1) == 1:
+		elif line[x] == 1 and line.count('1') == 1:
 			return x
-		elif line.count(1) > 1:  # a jump
+		elif line.count('1') > 1:  # a jump
 			return -1
 
 	return -1
