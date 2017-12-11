@@ -3,9 +3,11 @@ def detect_crossover(notesByMeasures):
 	foot = False  # false = left foot, true = right foot
 	arrow = 0
 	firstNote = False
+	print "flag1"
 	for x in range(0, len(notesByMeasures)):
 		arrow = check_step(notesByMeasures[x])
 		if arrow == -1:
+			#print notesByMeasures[x], '\t', arrow
 			continue
 		if firstNote == False:
 			if arrow == 0:  # determines which foot hits first note of song
@@ -16,7 +18,7 @@ def detect_crossover(notesByMeasures):
 		if foot and check_step(notesByMeasures[x + 1]) == 3:
 			print("Crossover at line: ", x + 1)
 		if not foot and check_step(notesByMeasures[x + 1]) == 0:
-			print("Crossover at line: ", x + 1)
+			print "Crossover at line: ", x + 1
 	print "check crossover done"
 
 
@@ -27,10 +29,10 @@ def check_step(line):
 	if line.count("0") == 4:
 		return -1  # returns -1 if there are no notes on the line
 	for x in range(0, len(line)):
-		if line[x] == 0:  # if 0, keep going until there's a note
+		if line[x] == '0':  # if 0, keep going until there's a note
 			continue
 		# if 1 and only 1 note, return the pos of note
-		elif line[x] == 1 and line.count('1') == 1:
+		elif line[x] == '1' and line.count('1') == 1:
 			return x
 		elif line.count('1') > 1:  # a jump
 			return -1
