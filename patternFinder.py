@@ -3,7 +3,6 @@ def detect_crossover(notesByMeasures):
 	foot = False  # false = left foot, true = right foot
 	arrow = 0
 	firstNote = False
-	print "flag1"
 	for x in range(0, len(notesByMeasures)):
 		arrow = check_step(notesByMeasures[x])
 		if arrow == -1:
@@ -16,7 +15,7 @@ def detect_crossover(notesByMeasures):
 				foot = False
 			firstNote = False
 		if foot and check_step(notesByMeasures[x + 1]) == 3:
-			print("Crossover at line: ", x + 1)
+			print "Crossover at line: ", x + 1
 		if not foot and check_step(notesByMeasures[x + 1]) == 0:
 			print "Crossover at line: ", x + 1
 	print "check crossover done"

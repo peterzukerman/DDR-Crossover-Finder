@@ -51,7 +51,6 @@ def check_yes_no():
         return False
     else:
         print "Wrong input"
-        check_yes_no()
 
 
 def choose_songs():
@@ -61,10 +60,13 @@ def choose_songs():
     """
     list_of_songs = create_list_songs()
     input = raw_input("\t Choose song to play :")
+    try:
+		int(input)
+    except:
+		print "Wrong Input"
     while int(input) > len(list_of_songs) - 1:
-        input = raw_input("\t Wrong input, choose song to play :")
+		input = raw_input("\t Wrong input, choose song to play :")
     print "'" + list_of_songs[int(input)] + "'" + " was chosen. Wold you like to continue? (y/n)"
-
     if check_yes_no():
 		directory = "./Songs/"
 		directory += list_of_songs[int(input)]
