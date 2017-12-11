@@ -1,10 +1,11 @@
 
-def detect_crossover(notesByMeasures):
+def detect_crossover(notesByMeasures, title):
     foot = False  # false = left foot, true = right foot
     arrow = 0
     firstNote = False
     count = 0
-    f = open('output.txt', 'w')
+    output_title = './Output/' + str(title) + '.txt'
+    f = open(output_title, 'w')
     for x in range(0, len(notesByMeasures)):
         arrow = check_step(notesByMeasures[x])
         if arrow == -1:
@@ -25,7 +26,7 @@ def detect_crossover(notesByMeasures):
             print ("Crossover at line: ", x + 1)
             f.write("Crossover at line: " + str(x + 1) + '\n')
     print ("check crossover done")
-    print ("number of crossovers" + str(count))
+    print ("number of crossovers " + str(count))
     f.write("number of crossovers: " + str(count))
     f.close
 
