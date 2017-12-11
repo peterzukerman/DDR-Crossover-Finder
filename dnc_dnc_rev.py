@@ -54,15 +54,15 @@ def choose_songs():
     output : directory of chosen song.
     """
     list_of_songs = create_list_songs()
-    user_input = input("Choose song to play : ")
+    user_input = input("\tChoose song to play : ")
     try:
         int(user_input)
     except:
         print ("Wrong Input")
     while int(user_input) > len(list_of_songs) - 1:
         user_input = input("\t Wrong input, choose song to play :")
-    response = input ("'" + list_of_songs[int(user_input)] + "'" +
-           " was chosen. Wold you like to continue? (y/n) : ")
+    response = input("'" + list_of_songs[int(user_input)] + "'" +
+                     " was chosen. Wold you like to continue? (y/n) : ")
     if check_yes_no(response):
         directory = "./Songs/"
         directory += list_of_songs[int(user_input)]
@@ -75,12 +75,24 @@ def choose_songs():
     else:
         return choose_songs()
 
+def check_option(notes, title):
+    option_num = input("\t\t0: Play(unavailable) \n\t\t1: show crossovers \n\tChoose Options : ")
+    if option_num == '0':
+        print ("not available yet")
+        check_option(notes, title)
+    elif option_num == '1':
+        pf.detect_crossover(notes, title)
+    elif option_num == '9':
+        print ("exit")
+    else:
+        print ("\tno options selected.")
+        check_option(notes, title)
 
 def main():
     file_dir = choose_songs()
     title = file_dir.split("/")[2]
     notes = initialize_notes(file_dir)
-    pf.detect_crossover(notes, title)
+    check_option(notes, title)
 
 
 main()
