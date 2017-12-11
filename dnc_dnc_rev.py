@@ -35,15 +35,14 @@ def create_list_songs():
     return avail_songs
 
 
-def check_yes_no():
+def check_yes_no(res):
     """
     checks if user input is yes('y') or no('n'). Calls function itself if invalid input entered.
     output : boolean. True if 'y' False if 'n'
     """
-    user_input = input()
-    if user_input == 'y':
+    if res == 'y':
         return True
-    elif user_input == 'n':
+    elif res == 'n':
         return False
     else:
         print ("Wrong input")
@@ -55,16 +54,16 @@ def choose_songs():
     output : directory of chosen song.
     """
     list_of_songs = create_list_songs()
-    user_input = input("\t Choose song to play :")
+    user_input = input("Choose song to play : ")
     try:
         int(user_input)
     except:
         print ("Wrong Input")
     while int(user_input) > len(list_of_songs) - 1:
         user_input = input("\t Wrong input, choose song to play :")
-    print ("'" + list_of_songs[int(user_input)] + "'" +
-           " was chosen. Wold you like to continue? (y/n)")
-    if check_yes_no():
+    response = input ("'" + list_of_songs[int(user_input)] + "'" +
+           " was chosen. Wold you like to continue? (y/n) : ")
+    if check_yes_no(response):
         directory = "./Songs/"
         directory += list_of_songs[int(user_input)]
         directory += '/'
@@ -78,9 +77,10 @@ def choose_songs():
 
 
 def main():
-    file = choose_songs()
-    notes = initialize_notes(file)
-    pf.detect_crossover(notes)
+    file_dir = choose_songs()
+    title = file_dir.split("/")[2]
+    notes = initialize_notes(file_dir)
+    pf.detect_crossover(notes, title)
 
 
 main()
