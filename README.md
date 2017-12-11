@@ -11,7 +11,7 @@ application that reads stepcharts and returns useful information
 
 ## find crossovers
 
-[What is crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
+[What are crossovers?](http://dancedancerevolutionddr.wikia.com/wiki/Crossover)
 
 [How to do crossovers. (sequence of crossovers)](https://www.wikihow.com/Do-a-Crossover-in-Dance-Dance-Revolution-or-In-the-Groove)
 
