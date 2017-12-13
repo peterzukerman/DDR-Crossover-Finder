@@ -21,10 +21,10 @@ application that reads stepcharts and returns useful information
 ## find brackets
 
 ## find jacks (double steps)
+determine percentage facing right vs facing left
 
 # To run the code
 prerequsites
  ~~~~
 python3 dnc_dnc_rev.py
 ~~~~
-determine percentage facing right vs facing left
