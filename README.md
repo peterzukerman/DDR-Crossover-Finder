@@ -25,6 +25,6 @@ application that reads stepcharts and returns useful information
 # To run the code
 prerequsites
  ~~~~
-python3 python dnc_dnc_rev.py
+python3 dnc_dnc_rev.py
 ~~~~
 determine percentage facing right vs facing left
